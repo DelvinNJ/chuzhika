@@ -114,12 +114,12 @@ export default function Hero() {
           muted
           playsInline
           onCanPlay={() => setHasValidVideo(true)}
-          poster="/images/hero-fallback.jpg"
+          poster={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/images/hero-fallback.jpg`}
           className={`w-full h-full object-cover transition-opacity duration-1000 scale-105 will-change-transform ${
             hasValidVideo ? "opacity-35" : "opacity-0"
           }`}
         >
-          <source src="/videos/hero.mp4" type="video/mp4" />
+          <source src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/videos/hero.mp4`} type="video/mp4" />
         </video>
 
         {/* High-Resolution Futuristic Fallback Backdrop */}
