@@ -15,8 +15,6 @@ export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const bgRef = useRef<HTMLDivElement>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [hasValidVideo, setHasValidVideo] = useState(false);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -106,21 +104,6 @@ export default function Hero() {
         {/* Interactive 3D Cybernetic Warp Canvas */}
         <HeroCanvas />
 
-        {/* Video Player (Gracefully falls back to image if video is empty) */}
-        <video
-          ref={videoRef}
-          autoPlay
-          loop
-          muted
-          playsInline
-          onCanPlay={() => setHasValidVideo(true)}
-          poster={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/images/hero-fallback.jpg`}
-          className={`w-full h-full object-cover transition-opacity duration-1000 scale-105 will-change-transform ${
-            hasValidVideo ? "opacity-35" : "opacity-0"
-          }`}
-        >
-          <source src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/videos/hero.mp4`} type="video/mp4" />
-        </video>
 
         {/* High-Resolution Futuristic Fallback Backdrop */}
         <div className="absolute inset-0 z-0 opacity-40 mix-blend-screen">
