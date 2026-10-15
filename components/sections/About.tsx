@@ -6,6 +6,7 @@ import { motion, useInView } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { PORTFOLIO_DATA } from "@/data/portfolio";
+import { getAssetPath } from "@/utils/paths";
 
 function AnimatedCounter({
   target,
@@ -125,7 +126,7 @@ export default function About() {
             >
               <div className="relative aspect-[4/3] w-full rounded-xl overflow-hidden">
                 <Image
-                  src="/images/about-workspace.jpg"
+                  src={getAssetPath("/images/about-workspace.jpg")}
                   alt="Chuzhika developer workspace"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"

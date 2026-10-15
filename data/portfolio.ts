@@ -1,3 +1,5 @@
+import { getAssetPath } from "@/utils/paths";
+
 export interface ProjectItem {
   id: string;
   title: string;
@@ -115,7 +117,7 @@ export const PORTFOLIO_DATA = {
       tagline: "Next-gen crypto & biometric banking platform",
       category: "Mobile App",
       description: "Cross-platform mobile wallet supporting biometric authorization, real-time crypto ticker websockets, localized encrypted keys, and instant multi-chain transfers.",
-      image: "/images/proj-fintech.jpg",
+      image: getAssetPath("/images/proj-fintech.jpg"),
       tags: ["React Native", "TypeScript", "Reanimated", "WebSockets", "FaceID"],
       metrics: "< 80ms interaction latency • 150k active wallets",
       role: "Lead Mobile Architect",
@@ -130,7 +132,7 @@ export const PORTFOLIO_DATA = {
       tagline: "High-density neural network telemetry & inference visualizer",
       category: "Web App",
       description: "Interactive SaaS cloud dashboard providing real-time telemetry into distributed LLM pipelines, model accuracy graphs, token consumption, and edge latency heatmaps.",
-      image: "/images/proj-ai-platform.jpg",
+      image: getAssetPath("/images/proj-ai-platform.jpg"),
       tags: ["Next.js 16", "TypeScript", "Tailwind CSS", "GSAP", "Turbopack"],
       metrics: "99.98% uptime • 2.1M daily inferences monitored",
       role: "Full Stack Engineer",
@@ -145,7 +147,7 @@ export const PORTFOLIO_DATA = {
       tagline: "Cyber-minimal personal bio-telemetry tracker",
       category: "Mobile App",
       description: "Real-time health telemetry application syncing with Apple Watch and wearable rings. Features circadian rhythm analytics, heart-rate variability forecasting, and sleek dark visuals.",
-      image: "/images/proj-health.jpg",
+      image: getAssetPath("/images/proj-health.jpg"),
       tags: ["React Native", "HealthKit", "Expo", "FastAPI", "Tailwind"],
       metrics: "4.9 App Store rating • 60fps animations",
       role: "Mobile Developer & UI Designer",
@@ -160,7 +162,7 @@ export const PORTFOLIO_DATA = {
       tagline: "WebGL real-time cloud infrastructure architect",
       category: "Web App",
       description: "Visual cloud orchestration platform displaying interconnected microservices in an interactive 3D node graph. Live health metrics, distributed traces, and one-click rollback triggers.",
-      image: "/images/proj-devops.jpg",
+      image: getAssetPath("/images/proj-devops.jpg"),
       tags: ["Next.js", "Three.js", "Docker", "GraphQL", "Tailwind CSS"],
       metrics: "60fps WebGL canvas • Sub-second topology sync",
       role: "Frontend Architect",

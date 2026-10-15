@@ -9,6 +9,7 @@ import { PORTFOLIO_DATA } from "@/data/portfolio";
 import { useSmoothScroll } from "@/components/providers/SmoothScrollProvider";
 import MagneticButton from "@/components/ui/MagneticButton";
 import HeroCanvas from "@/components/ui/HeroCanvas";
+import { getAssetPath } from "@/utils/paths";
 
 export default function Hero() {
   const { scrollTo } = useSmoothScroll();
@@ -108,7 +109,7 @@ export default function Hero() {
         {/* High-Resolution Futuristic Fallback Backdrop */}
         <div className="absolute inset-0 z-0 opacity-40 mix-blend-screen">
           <Image
-            src="/images/hero-fallback.jpg"
+            src={getAssetPath("/images/hero-fallback.jpg")}
             alt="Hero abstract background"
             fill
             priority

@@ -1,12 +1,11 @@
 import type { NextConfig } from "next";
 
-const isGithubActions = process.env.GITHUB_ACTIONS || false;
-const repoName = "chuzhika";
+const isProd = process.env.NODE_ENV === "production";
 
 const nextConfig: NextConfig = {
   output: "export",
-  // In GitHub Actions, automatically set basePath to repository name for GitHub Pages
-  basePath: process.env.NEXT_PUBLIC_BASE_PATH ?? (isGithubActions ? `/${repoName}` : ""),
+  basePath: isProd ? "/chuzhika" : "",
+  assetPrefix: isProd ? "/chuzhika/" : undefined,
   images: {
     unoptimized: true,
   },
