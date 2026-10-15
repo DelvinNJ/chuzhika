@@ -34,30 +34,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Quick Navigation */}
-          <div className="md:col-span-3 flex flex-col gap-4">
-            <h4 className="text-xs uppercase font-mono tracking-widest text-violet-400">
-              Navigation
-            </h4>
-            <ul className="flex flex-col gap-2.5 text-sm text-zinc-600 dark:text-zinc-400">
-              {PORTFOLIO_DATA.navLinks.map((item) => (
-                <li key={item.href}>
-                  <a
-                    href={item.href}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      scrollTo(item.href, { offset: -70 });
-                    }}
-                    className="hover:text-violet-600 dark:hover:text-violet-300 transition-colors inline-flex items-center gap-1.5 group font-medium"
-                    data-cursor-hover
-                  >
-                    <span className="w-1.5 h-1.5 rounded-full bg-zinc-400 dark:bg-zinc-600 group-hover:bg-violet-500 transition-colors" />
-                    {item.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
 
           {/* Connect / Socials */}
           <div className="md:col-span-4 flex flex-col gap-4">

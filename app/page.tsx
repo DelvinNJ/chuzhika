@@ -1,5 +1,6 @@
 import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
+import Founders from "@/components/Founders";
 import Services from "@/components/sections/Services";
 import Projects from "@/components/sections/Projects";
 import Process from "@/components/sections/Process";
@@ -13,6 +14,9 @@ export default function Home() {
 
       {/* 2. About Section */}
       <About />
+
+      {/* 2.5. Founders Section */}
+      <Founders />
 
       {/* 3. Services Section */}
       <Services />
