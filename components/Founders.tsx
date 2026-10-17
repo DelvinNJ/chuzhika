@@ -7,21 +7,21 @@ import { FOUNDERS_DATA, Founder } from "@/data/founders";
 
 function FounderCard({
   founder,
-  direction,
+  direction = "center",
 }: {
   founder: Founder;
-  direction: "left" | "right";
+  direction?: "left" | "right" | "center";
 }) {
   const [imageError, setImageError] = useState(false);
   const shouldReduceMotion = useReducedMotion();
 
-  // Cards slide in from opposite sides: left card from left (-60px), right card from right (+60px)
-  const initialX = shouldReduceMotion ? 0 : direction === "left" ? -60 : 60;
+  const initialX = shouldReduceMotion || direction === "center" ? 0 : direction === "left" ? -60 : 60;
+  const initialY = shouldReduceMotion ? 0 : direction === "center" ? 40 : 0;
 
   return (
     <motion.article
-      initial={{ opacity: 0, x: initialX }}
-      whileInView={{ opacity: 1, x: 0 }}
+      initial={{ opacity: 0, x: initialX, y: initialY }}
+      whileInView={{ opacity: 1, x: 0, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
       className="group relative glass-card rounded-3xl p-6 sm:p-8 border border-white/[0.08] hover:border-violet-500/50 hover:ring-2 hover:ring-violet-500/40 transition-all duration-500 flex flex-col justify-between shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-hidden"
@@ -38,7 +38,7 @@ function FounderCard({
               alt={`Portrait of ${founder.name}, ${founder.role}`}
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 480px"
-              className="object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
+              className="object-cover object-top transform group-hover:scale-105 transition-transform duration-700 ease-out"
               onError={() => setImageError(true)}
             />
           ) : (
@@ -130,29 +130,29 @@ export default function Founders() {
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 relative z-10">
         {/* Section Header */}
-        <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-20">
+        <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-16">
           <div className="flex items-center gap-2 mb-4">
             <div className="h-[1px] w-8 bg-violet-500/30" />
             <span className="text-xs uppercase font-mono tracking-widest text-violet-400">
-              The people behind Chuzhika
+              The mind behind Chuzhika
             </span>
             <div className="h-[1px] w-8 bg-violet-500/30" />
           </div>
           <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white mb-4">
-            Meet the <span className="gradient-text">founders.</span>
+            Meet the <span className="gradient-text">founder.</span>
           </h2>
           <p className="text-sm sm:text-base text-zinc-400 leading-relaxed">
-            The engineering and creative leadership driving high-precision native mobile runtimes and bleeding-edge web platforms.
+            The engineering and architectural leadership driving high-precision native mobile runtimes and bleeding-edge web platforms.
           </p>
         </div>
 
-        {/* 2 Cards side by side on desktop, stacked on mobile */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 max-w-5xl mx-auto">
-          {FOUNDERS_DATA.map((founder, index) => (
+        {/* Founder Card - Centered Single Presentation */}
+        <div className="max-w-xl mx-auto">
+          {FOUNDERS_DATA.map((founder) => (
             <FounderCard
               key={founder.id}
               founder={founder}
-              direction={index === 0 ? "left" : "right"}
+              direction="center"
             />
           ))}
         </div>
