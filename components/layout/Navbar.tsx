@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { PORTFOLIO_DATA } from "@/data/portfolio";
 import { useSmoothScroll } from "@/components/providers/SmoothScrollProvider";
 import MagneticButton from "@/components/ui/MagneticButton";
+import Logo from "@/components/ui/Logo";
 
 export default function Navbar() {
   const { scrollTo } = useSmoothScroll();
@@ -79,17 +80,11 @@ export default function Navbar() {
           <a
             href="#hero"
             onClick={(e) => handleNavClick(e, "#hero")}
-            className="group flex items-center gap-2.5 text-xl font-bold tracking-tight text-white"
+            className="group flex items-center gap-3 text-xl font-bold tracking-tight text-white"
             data-cursor-hover
           >
-            <div className="relative flex items-center justify-center w-9 h-9 rounded-xl bg-gradient-to-tr from-violet-600 to-indigo-500 p-[1px] shadow-[0_0_15px_rgba(139,92,246,0.5)] group-hover:shadow-[0_0_25px_rgba(139,92,246,0.8)] transition-all">
-              <div className="w-full h-full bg-[#070710] rounded-[11px] flex items-center justify-center text-violet-400 font-black text-sm tracking-tighter">
-                C
-              </div>
-              <span className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-cyan-400 animate-ping opacity-75" />
-              <span className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-[0_0_8px_#22d3ee]" />
-            </div>
-            <span className="tracking-wider uppercase text-sm font-semibold text-zinc-100 group-hover:text-violet-300 transition-colors">
+            <Logo size={46} showGlow={true} />
+            <span className="tracking-wider uppercase text-base font-bold text-zinc-100 group-hover:text-violet-300 transition-colors">
               Chuzhika
             </span>
           </a>

@@ -61,6 +61,15 @@ export const metadata: Metadata = {
     images: ["/images/hero-fallback.jpg"],
     creator: "@chuzhika_tech",
   },
+  icons: {
+    icon: [
+      { url: "/icon.png", sizes: "192x192", type: "image/png" },
+      { url: "/logo.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [
+      { url: "/icon.png", sizes: "192x192", type: "image/png" },
+    ],
+  },
   robots: {
     index: true,
     follow: true,
