@@ -4,6 +4,7 @@ import React from "react";
 import { PORTFOLIO_DATA } from "@/data/portfolio";
 import { useSmoothScroll } from "@/components/providers/SmoothScrollProvider";
 import MagneticButton from "@/components/ui/MagneticButton";
+import Logo from "@/components/ui/Logo";
 
 export default function Footer() {
   const { scrollTo } = useSmoothScroll();
@@ -17,11 +18,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 pb-16 border-b border-white/[0.06]">
           {/* Brand Column */}
           <div className="md:col-span-5 flex flex-col gap-5">
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-violet-600 flex items-center justify-center font-black text-white text-sm shadow-[0_0_15px_rgba(139,92,246,0.6)]">
-                C
-              </div>
-              <span className="text-xl font-bold tracking-wider text-white uppercase">
+            <div className="flex items-center gap-3.5">
+              <Logo size={44} showGlow={true} />
+              <span className="text-2xl font-bold tracking-wider text-white uppercase">
                 {PORTFOLIO_DATA.profile.name}
               </span>
             </div>
