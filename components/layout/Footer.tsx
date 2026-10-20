@@ -2,13 +2,10 @@
 
 import React from "react";
 import { PORTFOLIO_DATA } from "@/data/portfolio";
-import { useSmoothScroll } from "@/components/providers/SmoothScrollProvider";
 import MagneticButton from "@/components/ui/MagneticButton";
 import Logo from "@/components/ui/Logo";
 
 export default function Footer() {
-  const { scrollTo } = useSmoothScroll();
-
   return (
     <footer className="relative bg-[#040408] border-t border-white/[0.08] overflow-hidden pt-20 pb-12">
       {/* Background radial glow */}
@@ -69,20 +66,6 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500 font-mono">
           <p>© {new Date().getFullYear()} {PORTFOLIO_DATA.profile.name}. All rights reserved.</p>
-
-          <div className="flex items-center gap-6">
-            <span>Built with Next.js 16 • GSAP • Lenis • Tailwind</span>
-            <MagneticButton
-              as="button"
-              onClick={() => scrollTo("#hero", { offset: 0 })}
-              className="flex items-center gap-1.5 text-zinc-600 hover:text-violet-600 dark:text-zinc-400 dark:hover:text-violet-300 transition-colors"
-            >
-              Back to top
-              <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
-              </svg>
-            </MagneticButton>
-          </div>
         </div>
       </div>
     </footer>

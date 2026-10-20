@@ -6,9 +6,11 @@ import { PORTFOLIO_DATA } from "@/data/portfolio";
 import { useSmoothScroll } from "@/components/providers/SmoothScrollProvider";
 import MagneticButton from "@/components/ui/MagneticButton";
 import Logo from "@/components/ui/Logo";
+import { useLoading } from "@/components/providers/LoadingContext";
 
 export default function Navbar() {
   const { scrollTo } = useSmoothScroll();
+  const { isReady } = useLoading();
   const [isVisible, setIsVisible] = useState(true);
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -28,10 +30,12 @@ export default function Navbar() {
       }
 
       // Hide navbar when scrolling down, show when scrolling up
-      if (currentScrollY > lastScrollY && currentScrollY > 150) {
-        setIsVisible(false);
-      } else {
+      // Always visible near the top and whenever the user scrolls up;
+      // hide only while scrolling down past the hero.
+      if (currentScrollY < lastScrollY || currentScrollY <= 150) {
         setIsVisible(true);
+      } else if (currentScrollY > lastScrollY) {
+        setIsVisible(false);
       }
 
       lastScrollY = currentScrollY;
@@ -65,11 +69,11 @@ export default function Navbar() {
       <motion.header
         initial={{ y: -100, opacity: 0 }}
         animate={{
-          y: isVisible ? 0 : -100,
-          opacity: isVisible ? 1 : 0,
+          y: isVisible && isReady ? 0 : -100,
+          opacity: isVisible && isReady ? 1 : 0,
         }}
         transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-[padding,background-color,border-color,box-shadow] duration-300 ${
           isScrolled
             ? "py-3 bg-[#070710]/80 backdrop-blur-xl border-b border-white/[0.08] shadow-[0_4px_30px_rgba(0,0,0,0.5)]"
             : "py-6 bg-transparent"

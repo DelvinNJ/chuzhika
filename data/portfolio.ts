@@ -212,10 +212,8 @@ export const PORTFOLIO_DATA = {
     { label: "About", href: "#about" },
     { label: "Founders", href: "#founders" },
     { label: "Services", href: "#services" },
-    { label: "Builder", href: "#builder" },
     { label: "Projects", href: "#projects" },
     { label: "Process", href: "#process" },
-    { label: "Lab", href: "#build-lab" },
     { label: "Contact", href: "#contact" },
   ],
 

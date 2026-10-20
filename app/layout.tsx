@@ -8,6 +8,7 @@ import WebsiteFadeWrapper from "@/components/ui/WebsiteFadeWrapper";
 import CustomCursor from "@/components/ui/CustomCursor";
 import ScrollProgressBar from "@/components/ui/ScrollProgressBar";
 import Navbar from "@/components/layout/Navbar";
+import BackToTopButton from "@/components/ui/BackToTopButton";
 import Footer from "@/components/layout/Footer";
 
 const geistSans = Geist({
@@ -95,8 +96,9 @@ export default function RootLayout({
             <PageLoader />
             <ScrollProgressBar />
             <CustomCursor />
+            <Navbar />
+            <BackToTopButton />
             <WebsiteFadeWrapper>
-              <Navbar />
               <div className="flex-1 w-full">{children}</div>
               <Footer />
             </WebsiteFadeWrapper>
