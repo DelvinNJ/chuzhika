@@ -109,7 +109,7 @@ export default function About() {
           <div className="lg:col-span-7">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white leading-tight">
               Bridging <span className="text-[#8b5cf6]">high-performance native systems</span> with{" "}
-              <span className="text-[#06b6d4]">interactive web luxury.</span>
+              <span className="text-[#8b5cf6]">interactive web luxury.</span>
             </h2>
           </div>
           <div className="lg:col-span-5 flex flex-col gap-4 text-zinc-400 text-base leading-relaxed">

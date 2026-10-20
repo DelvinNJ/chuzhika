@@ -146,14 +146,15 @@ export default function Founders() {
               <span className="w-1.5 h-1.5 rounded-full bg-[#8b5cf6]" />
               <span className="w-1.5 h-1.5 rounded-full bg-[#06b6d4]" />
               <span className="w-1.5 h-1.5 rounded-full bg-[#10b981]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#f59e0b]" />
             </div>
             <span className="text-xs uppercase font-mono tracking-widest text-violet-400">
-              The mind behind Chuzhika
+              [ 05 // LEADERSHIP & ARCHITECTS ]
             </span>
             <div className="h-[1px] w-8 bg-violet-500/30" />
           </div>
           <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white mb-4">
-            Meet the <span className="gradient-spectrum-text">Founder & Architect.</span>
+            Meet the <span className="text-[#8b5cf6]">Founder & Architect.</span>
           </h2>
           <p className="text-sm sm:text-base text-zinc-400 leading-relaxed">
             The engineering leadership driving <span className="text-[#8b5cf6]">high-precision native runtimes</span>, <span className="text-[#06b6d4]">120Hz micro-interactions</span>, and <span className="text-[#10b981]">hardened cloud architectures</span>.

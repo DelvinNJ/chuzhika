@@ -125,13 +125,13 @@ export default function Hero() {
         {/* Vignette & Gradient Overlays */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#05050a] via-[#05050a]/60 to-[#05050a]/40" />
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-violet-600/20 blur-[150px] rounded-full pointer-events-none" />
-        <div className="absolute bottom-10 right-10 w-[500px] h-[300px] bg-cyan-500/15 blur-[140px] rounded-full pointer-events-none" />
+        <div className="absolute bottom-10 right-10 w-[500px] h-[300px] bg-violet-900/20 blur-[140px] rounded-full pointer-events-none" />
       </div>
 
       {/* Main Content with Scroll Scrubbing */}
       <div
         ref={contentRef}
-        className="max-w-6xl mx-auto px-6 sm:px-8 relative z-10 text-center flex flex-col items-center will-change-transform"
+        className="max-w-5xl mx-auto px-6 sm:px-8 relative z-10 text-center flex flex-col items-center will-change-transform"
       >
         <motion.div
           variants={containerVariants}
@@ -139,21 +139,16 @@ export default function Hero() {
           animate={isReady ? "visible" : "hidden"}
           className="flex flex-col items-center"
         >
-          {/* Status Badge with 4-Color Spectrum */}
+          {/* Status Badge with Primary Violet Accent */}
           <motion.div variants={fadeUpVariants} className="mb-6">
-            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full glass-panel border border-violet-500/20 text-xs font-mono uppercase tracking-widest text-zinc-300 shadow-[0_0_20px_rgba(139,92,246,0.15)]">
-              <div className="flex items-center gap-1.5">
-                <span className="w-2 h-2 rounded-full bg-[#8b5cf6] shadow-[0_0_8px_#8b5cf6]" />
-                <span className="w-2 h-2 rounded-full bg-[#06b6d4] shadow-[0_0_8px_#06b6d4]" />
-                <span className="w-2 h-2 rounded-full bg-[#10b981] shadow-[0_0_8px_#10b981]" />
-                <span className="w-2 h-2 rounded-full bg-[#f59e0b] shadow-[0_0_8px_#f59e0b]" />
-              </div>
-              <span className="text-zinc-200">{PORTFOLIO_DATA.profile.roleTag}</span>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-violet-500/10 border border-violet-500/25 text-xs font-mono uppercase tracking-widest text-violet-300 shadow-[0_0_20px_rgba(139,92,246,0.15)]">
+              <span className="w-2 h-2 rounded-full bg-[#8b5cf6] animate-pulse shadow-[0_0_8px_#8b5cf6]" />
+              <span>{PORTFOLIO_DATA.profile.roleTag}</span>
             </div>
           </motion.div>
 
-          {/* Large Headline with Text-Reveal Animation */}
-          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight uppercase leading-[0.95] max-w-5xl mb-6">
+          {/* Large Headline with Clean Primary Violet Gradient */}
+          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight uppercase leading-[0.98] max-w-5xl mb-6">
             <span className="block overflow-hidden py-1">
               <motion.span variants={lineVariants} className="block text-white">
                 {PORTFOLIO_DATA.profile.heroHeading.line1}
@@ -162,43 +157,32 @@ export default function Hero() {
             <span className="block overflow-hidden py-1">
               <motion.span
                 variants={lineVariants}
-                className="block gradient-spectrum-text font-black tracking-tight"
+                className="block text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-violet-300 to-indigo-400 font-black tracking-tight drop-shadow-[0_0_35px_rgba(139,92,246,0.35)]"
               >
                 {PORTFOLIO_DATA.profile.heroHeading.line2}
               </motion.span>
             </span>
-            <span className="block overflow-hidden py-1">
-              <motion.span
-                variants={lineVariants}
-                className="block text-zinc-300 text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-normal normal-case font-sans"
-              >
-                For <span className="text-[#06b6d4]">Web</span> &{" "}
-                <span className="text-[#10b981]">Mobile</span>
-              </motion.span>
-            </span>
           </h1>
 
-          {/* Subtitle Description with Vibrant Spans */}
+          {/* Simplified Subtitle Description with Primary Violet Accent */}
           <motion.p
             variants={fadeUpVariants}
-            className="text-base sm:text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto leading-relaxed font-normal mb-10"
+            className="text-base sm:text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto leading-relaxed mb-8 font-normal"
           >
-            High-performance{" "}
-            <span className="text-[#8b5cf6] font-semibold">native iOS/Android applications</span> and modern{" "}
-            <span className="text-[#06b6d4] font-semibold">reactive web architectures</span> engineered with{" "}
-            <span className="text-[#10b981] font-semibold">surgical precision</span>, fluid micro-interactions, and{" "}
-            <span className="text-[#f59e0b] font-semibold">dark futuristic aesthetics</span>.
+            High-performance <span className="text-white font-medium">mobile applications</span> and modern{" "}
+            <span className="text-white font-medium">web architectures</span> engineered with{" "}
+            <span className="text-violet-400 font-semibold">surgical precision</span>.
           </motion.p>
 
           {/* CTA Buttons */}
           <motion.div
             variants={fadeUpVariants}
-            className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 mb-16 w-full sm:w-auto"
+            className="flex flex-col sm:flex-row items-center gap-4 sm:gap-5 w-full sm:w-auto"
           >
             <MagneticButton
               as="button"
               onClick={() => scrollTo("#projects", { offset: -50 })}
-              className="w-full sm:w-auto px-8 py-4 rounded-full bg-gradient-to-r from-violet-600 via-indigo-600 to-violet-700 !text-white font-semibold text-sm tracking-wider uppercase shadow-[0_0_30px_rgba(139,92,246,0.4)] hover:shadow-[0_0_45px_rgba(139,92,246,0.7)] transition-all flex items-center justify-center gap-3 border border-violet-400/30 group"
+              className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-violet-600 hover:bg-violet-500 !text-white font-semibold text-sm tracking-wider uppercase shadow-[0_0_25px_rgba(139,92,246,0.4)] hover:shadow-[0_0_35px_rgba(139,92,246,0.65)] transition-all flex items-center justify-center gap-3 border border-violet-400/30 group"
             >
               <span className="!text-white">Explore Projects</span>
               <svg
@@ -214,47 +198,10 @@ export default function Hero() {
             <MagneticButton
               as="button"
               onClick={() => scrollTo("#contact", { offset: -50 })}
-              className="w-full sm:w-auto px-8 py-4 rounded-full glass-card hover:bg-white/[0.08] text-zinc-200 hover:text-white font-semibold text-sm tracking-wider uppercase border border-white/10 hover:border-violet-500/40 transition-all flex items-center justify-center gap-2 shadow-sm"
+              className="w-full sm:w-auto px-8 py-3.5 rounded-full glass-card hover:bg-white/[0.08] text-zinc-200 hover:text-white font-semibold text-sm tracking-wider uppercase border border-white/10 hover:border-violet-500/40 transition-all flex items-center justify-center gap-2 shadow-sm"
             >
               <span>Start Collaboration</span>
             </MagneticButton>
-          </motion.div>
-
-          {/* Floating Technology Pills Cycling 4 Quad-Accent Colors */}
-          <motion.div
-            variants={fadeUpVariants}
-            className="flex flex-wrap items-center justify-center gap-2.5 max-w-3xl"
-          >
-            {[
-              { name: "React Native", color: "#8b5cf6" },
-              { name: "iOS & Android", color: "#06b6d4" },
-              { name: "Next.js 16", color: "#10b981" },
-              { name: "TypeScript", color: "#f59e0b" },
-              { name: "GSAP ScrollTrigger", color: "#8b5cf6" },
-              { name: "Tailwind CSS", color: "#06b6d4" },
-              { name: "Node / GraphQL", color: "#10b981" },
-            ].map((tech) => (
-              <span
-                key={tech.name}
-                className="px-3.5 py-1.5 rounded-full text-xs font-mono text-zinc-400 bg-white/[0.02] border border-white/[0.06] transition-all hover:scale-105"
-                style={{
-                  boxShadow: `0 0 0 1px transparent`,
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.color = tech.color;
-                  e.currentTarget.style.borderColor = tech.color;
-                  e.currentTarget.style.boxShadow = `0 0 12px ${tech.color}40`;
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.color = "";
-                  e.currentTarget.style.borderColor = "";
-                  e.currentTarget.style.boxShadow = "";
-                }}
-              >
-                <span className="inline-block w-1.5 h-1.5 rounded-full mr-1.5" style={{ backgroundColor: tech.color }} />
-                {tech.name}
-              </span>
-            ))}
           </motion.div>
         </motion.div>
       </div>

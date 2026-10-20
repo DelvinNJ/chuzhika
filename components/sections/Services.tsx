@@ -90,7 +90,7 @@ export default function Services() {
             </div>
             <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white">
               End-to-end craft from <span className="text-[#8b5cf6]">concept</span> to{" "}
-              <span className="text-[#06b6d4]">production</span> <span className="text-[#10b981]">speed.</span>
+              <span className="text-[#8b5cf6]">production speed.</span>
             </h2>
           </div>
           <p className="text-sm text-zinc-400 max-w-md">
