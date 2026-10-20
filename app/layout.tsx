@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import SmoothScrollProvider from "@/components/providers/SmoothScrollProvider";
+import { LoadingProvider } from "@/components/providers/LoadingContext";
+import PageLoader from "@/components/ui/PageLoader";
+import WebsiteFadeWrapper from "@/components/ui/WebsiteFadeWrapper";
 import CustomCursor from "@/components/ui/CustomCursor";
 import ScrollProgressBar from "@/components/ui/ScrollProgressBar";
 import Navbar from "@/components/layout/Navbar";
@@ -88,11 +91,16 @@ export default function RootLayout({
     >
       <body className="min-h-screen bg-[#05050a] text-zinc-100 antialiased selection:bg-violet-600/30 selection:text-white flex flex-col">
         <SmoothScrollProvider>
-          <ScrollProgressBar />
-          <CustomCursor />
-          <Navbar />
-          <div className="flex-1 w-full">{children}</div>
-          <Footer />
+          <LoadingProvider>
+            <PageLoader />
+            <ScrollProgressBar />
+            <CustomCursor />
+            <WebsiteFadeWrapper>
+              <Navbar />
+              <div className="flex-1 w-full">{children}</div>
+              <Footer />
+            </WebsiteFadeWrapper>
+          </LoadingProvider>
         </SmoothScrollProvider>
       </body>
     </html>
