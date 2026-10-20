@@ -30,25 +30,13 @@ export default function WebsiteFadeWrapper({
 
   return (
     <motion.div
-      initial={
-        reducedMotion
-          ? { opacity: 0 }
-          : { opacity: 0, filter: "blur(12px)", scale: 0.99, y: 8 }
-      }
-      animate={
-        isReady
-          ? reducedMotion
-            ? { opacity: 1 }
-            : { opacity: 1, filter: "blur(0px)", scale: 1, y: 0 }
-          : reducedMotion
-          ? { opacity: 0 }
-          : { opacity: 0, filter: "blur(12px)", scale: 0.99, y: 8 }
-      }
+      initial={{ opacity: 0 }}
+      animate={{ opacity: isReady ? 1 : 0 }}
       transition={{
-        duration: reducedMotion ? 0.3 : 1.25,
-        ease: [0.16, 1, 0.3, 1], // Cinematic, silky smooth deceleration
+        duration: reducedMotion ? 0.3 : 1.1,
+        ease: [0.16, 1, 0.3, 1],
       }}
-      className="flex-1 flex flex-col w-full relative transition-colors duration-500"
+      className="flex-1 flex flex-col w-full relative"
     >
       {children}
     </motion.div>

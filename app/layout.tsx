@@ -8,7 +8,9 @@ import WebsiteFadeWrapper from "@/components/ui/WebsiteFadeWrapper";
 import CustomCursor from "@/components/ui/CustomCursor";
 import ScrollProgressBar from "@/components/ui/ScrollProgressBar";
 import Navbar from "@/components/layout/Navbar";
+import BackToTopButton from "@/components/ui/BackToTopButton";
 import Footer from "@/components/layout/Footer";
+import { getAssetPath } from "@/utils/paths";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -66,11 +68,13 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/icon.png", sizes: "192x192", type: "image/png" },
-      { url: "/logo.png", sizes: "512x512", type: "image/png" },
+      { url: getAssetPath("/images/logo-transparent.png"), type: "image/png" },
+      { url: getAssetPath("/icon.png"), sizes: "192x192", type: "image/png" },
+      { url: getAssetPath("/logo.png"), sizes: "512x512", type: "image/png" },
     ],
+    shortcut: [getAssetPath("/images/logo-transparent.png")],
     apple: [
-      { url: "/icon.png", sizes: "192x192", type: "image/png" },
+      { url: getAssetPath("/images/logo-transparent.png"), type: "image/png" },
     ],
   },
   robots: {
@@ -89,14 +93,20 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} dark scroll-smooth`}
     >
+      <head>
+        <link rel="icon" type="image/png" href={getAssetPath("/images/logo-transparent.png")} />
+        <link rel="shortcut icon" type="image/png" href={getAssetPath("/images/logo-transparent.png")} />
+        <link rel="apple-touch-icon" href={getAssetPath("/images/logo-transparent.png")} />
+      </head>
       <body className="min-h-screen bg-[#05050a] text-zinc-100 antialiased selection:bg-violet-600/30 selection:text-white flex flex-col">
         <SmoothScrollProvider>
           <LoadingProvider>
             <PageLoader />
             <ScrollProgressBar />
             <CustomCursor />
+            <Navbar />
+            <BackToTopButton />
             <WebsiteFadeWrapper>
-              <Navbar />
               <div className="flex-1 w-full">{children}</div>
               <Footer />
             </WebsiteFadeWrapper>

@@ -139,14 +139,16 @@ export default function Hero() {
           animate={isReady ? "visible" : "hidden"}
           className="flex flex-col items-center"
         >
-          {/* Status Badge */}
+          {/* Status Badge with 4-Color Spectrum */}
           <motion.div variants={fadeUpVariants} className="mb-6">
             <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full glass-panel border border-violet-500/20 text-xs font-mono uppercase tracking-widest text-zinc-300 shadow-[0_0_20px_rgba(139,92,246,0.15)]">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-violet-400 opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-violet-500 shadow-[0_0_8px_#a78bfa]" />
-              </span>
-              <span>{PORTFOLIO_DATA.profile.roleTag}</span>
+              <div className="flex items-center gap-1.5">
+                <span className="w-2 h-2 rounded-full bg-[#8b5cf6] shadow-[0_0_8px_#8b5cf6]" />
+                <span className="w-2 h-2 rounded-full bg-[#06b6d4] shadow-[0_0_8px_#06b6d4]" />
+                <span className="w-2 h-2 rounded-full bg-[#10b981] shadow-[0_0_8px_#10b981]" />
+                <span className="w-2 h-2 rounded-full bg-[#f59e0b] shadow-[0_0_8px_#f59e0b]" />
+              </div>
+              <span className="text-zinc-200">{PORTFOLIO_DATA.profile.roleTag}</span>
             </div>
           </motion.div>
 
@@ -160,7 +162,7 @@ export default function Hero() {
             <span className="block overflow-hidden py-1">
               <motion.span
                 variants={lineVariants}
-                className="block gradient-text text-glow-violet"
+                className="block gradient-spectrum-text font-black tracking-tight"
               >
                 {PORTFOLIO_DATA.profile.heroHeading.line2}
               </motion.span>
@@ -170,17 +172,22 @@ export default function Hero() {
                 variants={lineVariants}
                 className="block text-zinc-300 text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-normal normal-case font-sans"
               >
-                {PORTFOLIO_DATA.profile.heroHeading.line3}
+                For <span className="text-[#06b6d4]">Web</span> &{" "}
+                <span className="text-[#10b981]">Mobile</span>
               </motion.span>
             </span>
           </h1>
 
-          {/* Subtitle Description */}
+          {/* Subtitle Description with Vibrant Spans */}
           <motion.p
             variants={fadeUpVariants}
             className="text-base sm:text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto leading-relaxed font-normal mb-10"
           >
-            {PORTFOLIO_DATA.profile.heroSubtitle}
+            High-performance{" "}
+            <span className="text-[#8b5cf6] font-semibold">native iOS/Android applications</span> and modern{" "}
+            <span className="text-[#06b6d4] font-semibold">reactive web architectures</span> engineered with{" "}
+            <span className="text-[#10b981] font-semibold">surgical precision</span>, fluid micro-interactions, and{" "}
+            <span className="text-[#f59e0b] font-semibold">dark futuristic aesthetics</span>.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -207,27 +214,47 @@ export default function Hero() {
             <MagneticButton
               as="button"
               onClick={() => scrollTo("#contact", { offset: -50 })}
-              className="w-full sm:w-auto px-8 py-4 rounded-full glass-card hover:bg-slate-100 dark:hover:bg-white/[0.08] text-zinc-800 dark:text-zinc-200 hover:text-violet-600 dark:hover:text-white font-semibold text-sm tracking-wider uppercase border border-slate-200 dark:border-white/10 hover:border-violet-500/40 transition-all flex items-center justify-center gap-2 shadow-sm"
+              className="w-full sm:w-auto px-8 py-4 rounded-full glass-card hover:bg-white/[0.08] text-zinc-200 hover:text-white font-semibold text-sm tracking-wider uppercase border border-white/10 hover:border-violet-500/40 transition-all flex items-center justify-center gap-2 shadow-sm"
             >
               <span>Start Collaboration</span>
             </MagneticButton>
           </motion.div>
 
-          {/* Floating Technology Pills */}
+          {/* Floating Technology Pills Cycling 4 Quad-Accent Colors */}
           <motion.div
             variants={fadeUpVariants}
             className="flex flex-wrap items-center justify-center gap-2.5 max-w-3xl"
           >
-            {["React Native", "iOS & Android", "Next.js 16", "TypeScript", "GSAP ScrollTrigger", "Tailwind CSS", "Node / GraphQL"].map(
-              (tech) => (
-                <span
-                  key={tech}
-                  className="px-3.5 py-1.5 rounded-full text-xs font-mono text-zinc-600 dark:text-zinc-400 bg-slate-100/80 dark:bg-white/[0.02] border border-slate-200 dark:border-white/[0.06] hover:border-violet-500/40 hover:text-violet-600 dark:hover:text-violet-300 transition-colors"
-                >
-                  {tech}
-                </span>
-              )
-            )}
+            {[
+              { name: "React Native", color: "#8b5cf6" },
+              { name: "iOS & Android", color: "#06b6d4" },
+              { name: "Next.js 16", color: "#10b981" },
+              { name: "TypeScript", color: "#f59e0b" },
+              { name: "GSAP ScrollTrigger", color: "#8b5cf6" },
+              { name: "Tailwind CSS", color: "#06b6d4" },
+              { name: "Node / GraphQL", color: "#10b981" },
+            ].map((tech) => (
+              <span
+                key={tech.name}
+                className="px-3.5 py-1.5 rounded-full text-xs font-mono text-zinc-400 bg-white/[0.02] border border-white/[0.06] transition-all hover:scale-105"
+                style={{
+                  boxShadow: `0 0 0 1px transparent`,
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.color = tech.color;
+                  e.currentTarget.style.borderColor = tech.color;
+                  e.currentTarget.style.boxShadow = `0 0 12px ${tech.color}40`;
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.color = "";
+                  e.currentTarget.style.borderColor = "";
+                  e.currentTarget.style.boxShadow = "";
+                }}
+              >
+                <span className="inline-block w-1.5 h-1.5 rounded-full mr-1.5" style={{ backgroundColor: tech.color }} />
+                {tech.name}
+              </span>
+            ))}
           </motion.div>
         </motion.div>
       </div>

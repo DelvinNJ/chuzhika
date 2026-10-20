@@ -57,8 +57,10 @@ function FounderCard({
           )}
 
           {/* Role Pill Overlay */}
-          <div className="absolute bottom-3 left-3 px-3 py-1.5 rounded-xl bg-[#070710]/85 backdrop-blur-md border border-white/10 text-[11px] font-mono text-violet-300">
-            {founder.id === "founder" ? "Architect // 01" : "Design // 02"}
+          <div className="absolute bottom-3 left-3 px-3 py-1.5 rounded-xl bg-[#070710]/85 backdrop-blur-md border border-white/10 text-[11px] font-mono text-zinc-300 flex items-center gap-1.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#8b5cf6] shadow-[0_0_6px_#8b5cf6]" />
+            <span>Lead Architect // </span>
+            <span className="text-[#8b5cf6] font-bold">01</span>
           </div>
         </div>
 
@@ -67,8 +69,10 @@ function FounderCard({
           <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight group-hover:text-violet-200 transition-colors">
             {founder.name}
           </h3>
-          <p className="text-sm font-semibold font-mono text-violet-400 mt-1">
-            {founder.role}
+          <p className="text-sm font-semibold font-mono text-[#8b5cf6] mt-1 flex items-center gap-2">
+            <span>{founder.role}</span>
+            <span className="text-zinc-600">•</span>
+            <span className="text-[#06b6d4] text-xs font-normal">Full-Stack Specialist</span>
           </p>
         </div>
 
@@ -77,20 +81,26 @@ function FounderCard({
           {founder.bio}
         </p>
 
-        {/* Skill Tags */}
+        {/* Skill Tags cycling 4 Quad-Accent Colors */}
         <div className="mb-6">
           <span className="text-[11px] font-mono uppercase tracking-wider text-zinc-500 block mb-2.5">
             Core Competencies
           </span>
           <div className="flex flex-wrap gap-1.5">
-            {founder.skills.map((skill) => (
-              <span
-                key={skill}
-                className="px-2.5 py-1 rounded-md text-[11px] font-mono text-zinc-300 bg-white/[0.03] border border-white/[0.08] group-hover:border-violet-500/30 transition-colors"
-              >
-                {skill}
-              </span>
-            ))}
+            {founder.skills.map((skill, index) => {
+              const colors = ["#8b5cf6", "#06b6d4", "#10b981", "#f59e0b"];
+              const c = colors[index % colors.length];
+
+              return (
+                <span
+                  key={skill}
+                  className="px-2.5 py-1 rounded-md text-[11px] font-mono text-zinc-300 bg-white/[0.03] border border-white/[0.08] hover:border-white/20 transition-all flex items-center gap-1.5"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: c }} />
+                  {skill}
+                </span>
+              );
+            })}
           </div>
         </div>
       </div>
@@ -132,17 +142,21 @@ export default function Founders() {
         {/* Section Header */}
         <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-16">
           <div className="flex items-center gap-2 mb-4">
-            <div className="h-[1px] w-8 bg-violet-500/30" />
+            <div className="flex items-center gap-1.5 mr-1">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#8b5cf6]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#06b6d4]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#10b981]" />
+            </div>
             <span className="text-xs uppercase font-mono tracking-widest text-violet-400">
               The mind behind Chuzhika
             </span>
             <div className="h-[1px] w-8 bg-violet-500/30" />
           </div>
           <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white mb-4">
-            Meet the <span className="gradient-text">founder.</span>
+            Meet the <span className="gradient-spectrum-text">Founder & Architect.</span>
           </h2>
           <p className="text-sm sm:text-base text-zinc-400 leading-relaxed">
-            The engineering and architectural leadership driving high-precision native mobile runtimes and bleeding-edge web platforms.
+            The engineering leadership driving <span className="text-[#8b5cf6]">high-precision native runtimes</span>, <span className="text-[#06b6d4]">120Hz micro-interactions</span>, and <span className="text-[#10b981]">hardened cloud architectures</span>.
           </p>
         </div>
 

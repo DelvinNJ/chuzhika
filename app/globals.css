@@ -119,6 +119,18 @@ html.lenis, html.lenis body {
   -webkit-text-fill-color: transparent;
 }
 
+.gradient-spectrum-text {
+  background: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 35%, #10b981 70%, #f59e0b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Quad-Accent Color System (#8b5cf6, #06b6d4, #10b981, #f59e0b) */
+.text-accent-violet { color: #8b5cf6; }
+.text-accent-cyan { color: #06b6d4; }
+.text-accent-emerald { color: #10b981; }
+.text-accent-amber { color: #f59e0b; }
+
 .glow-violet {
   box-shadow: 0 0 40px -5px rgba(139, 92, 246, 0.35);
 }
@@ -129,6 +141,14 @@ html.lenis, html.lenis body {
 
 .glow-cyan-sm {
   box-shadow: 0 0 20px -2px rgba(6, 182, 212, 0.25);
+}
+
+.glow-emerald-sm {
+  box-shadow: 0 0 20px -2px rgba(16, 185, 129, 0.25);
+}
+
+.glow-amber-sm {
+  box-shadow: 0 0 20px -2px rgba(245, 158, 11, 0.25);
 }
 
 .border-glow {
@@ -211,6 +231,44 @@ html.lenis, html.lenis body {
 @keyframes loaderBlink {
   0%, 100% { opacity: 0.25; transform: scale(0.8); }
   50% { opacity: 1; transform: scale(1.15); }
+}
+
+/* Cybernetic Circuit Pipeline Keyframes */
+@keyframes circuitLaserPulse {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes circuitNodeGlow {
+  0%, 100% {
+    opacity: 0.45;
+    transform: scale(0.98);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.03);
+  }
+}
+
+@keyframes dataPacketTravel {
+  0% {
+    offset-distance: 0%;
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    offset-distance: 100%;
+    opacity: 0;
+  }
 }
 
 /* Accessibility: Reduced Motion */
