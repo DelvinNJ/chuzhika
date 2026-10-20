@@ -81,8 +81,8 @@ export default function Projects() {
               <div className="h-[1px] w-12 bg-violet-500/30" />
             </div>
             <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white mb-4">
-              Engineered with <span className="text-[#06b6d4]">surgical intent</span> and{" "}
-              <span className="text-[#10b981]">production speed.</span>
+              Engineered with <span className="text-[#8b5cf6]">surgical intent</span> and{" "}
+              <span className="text-[#8b5cf6]">production speed.</span>
             </h2>
             <p className="text-sm sm:text-base text-zinc-400 leading-relaxed font-normal">
               High-throughput <span className="text-[#10b981] font-medium">cloud web platforms</span> and native{" "}

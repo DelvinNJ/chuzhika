@@ -132,8 +132,7 @@ export default function Process() {
           </div>
 
           <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white mb-3">
-            Autonomous engineering at <span className="text-[#8b5cf6]">circuit</span>{" "}
-            <span className="text-[#06b6d4]">speed.</span>
+            Autonomous engineering at <span className="text-[#8b5cf6]">circuit speed.</span>
           </h2>
 
           <p className="text-zinc-400 text-xs sm:text-sm md:text-base leading-relaxed max-w-2xl font-normal px-2">

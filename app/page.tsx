@@ -15,9 +15,6 @@ export default function Home() {
       {/* 2. About Section */}
       <About />
 
-      {/* 2.5. Founders Section */}
-      <Founders />
-
       {/* 3. Services Section */}
       <Services />
 
@@ -27,7 +24,10 @@ export default function Home() {
       {/* 5. Process Section (Vertical Timeline) */}
       <Process />
 
-      {/* 6. Contact Section */}
+      {/* 6. Founders Section */}
+      <Founders />
+
+      {/* 7. Contact Section */}
       <Contact />
     </main>
   );

@@ -102,7 +102,7 @@ export default function Contact() {
             <span className="w-1.5 h-1.5 rounded-full bg-[#f59e0b]" />
           </div>
           <span className="text-xs uppercase font-mono tracking-widest text-violet-400">
-            [ 05 // INITIALIZE COLLABORATION ]
+            [ 06 // INITIALIZE COLLABORATION ]
           </span>
           <div className="h-[1px] w-12 bg-violet-500/30" />
         </div>
@@ -113,7 +113,7 @@ export default function Contact() {
             <div>
               <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white mb-4">
                 Let&apos;s architect <span className="text-[#8b5cf6]">what&apos;s next</span> with{" "}
-                <span className="text-[#06b6d4]">surgical precision.</span>
+                <span className="text-[#8b5cf6]">surgical precision.</span>
               </h2>
               <p className="text-sm sm:text-base text-zinc-400 leading-relaxed">
                 Have a <span className="text-[#06b6d4] font-medium">mobile app to build</span> or a{" "}

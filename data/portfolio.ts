@@ -210,10 +210,10 @@ export const PORTFOLIO_DATA = {
 
   navLinks: [
     { label: "About", href: "#about" },
-    { label: "Founders", href: "#founders" },
     { label: "Services", href: "#services" },
     { label: "Projects", href: "#projects" },
     { label: "Process", href: "#process" },
+    { label: "Founders", href: "#founders" },
     { label: "Contact", href: "#contact" },
   ],
 
