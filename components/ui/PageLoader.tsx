@@ -8,6 +8,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useLoading } from "@/components/providers/LoadingContext";
 import { useSmoothScroll } from "@/components/providers/SmoothScrollProvider";
 import { getAssetPath } from "@/utils/paths";
+import TornadoLoaderCanvas from "@/components/ui/TornadoLoaderCanvas";
 
 const BRAND_LETTERS = "CHUZHIKA".split("");
 
@@ -238,31 +239,8 @@ export default function PageLoader() {
                 }}
               />
 
-              {/* Expanding sonar ripples */}
-              {[0, 1, 2].map((i) => (
-                <div
-                  key={i}
-                  className="absolute w-32 h-32 rounded-full border border-cyan-400/40 pointer-events-none"
-                  style={{ animation: `loaderRipple 3s ease-out ${i}s infinite`, opacity: 0 }}
-                />
-              ))}
-
-              {/* Concentric outer ambient spinning ring */}
-              <div className="absolute w-44 h-44 sm:w-52 sm:h-52 rounded-full border border-violet-500/20 border-dashed animate-[spin_24s_linear_infinite] pointer-events-none" />
-
-              {/* Concentric inner glowing brackets */}
-              <div className="absolute w-36 h-36 sm:w-44 sm:h-44 rounded-full border-t border-cyan-400/50 border-b border-violet-400/40 border-l-transparent border-r-transparent animate-[spin_10s_linear_infinite_reverse] pointer-events-none shadow-[0_0_20px_rgba(6,182,212,0.3)]" />
-
-              {/* Orbiting satellites (inner, clockwise) */}
-              <div className="absolute w-44 h-44 sm:w-52 sm:h-52 animate-[spin_5s_linear_infinite] pointer-events-none">
-                <span className="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-cyan-300 shadow-[0_0_12px_3px_rgba(34,211,238,0.8)]" />
-              </div>
-
-              {/* Orbiting satellites (outer, counter-clockwise) */}
-              <div className="absolute w-56 h-56 sm:w-64 sm:h-64 animate-[spin_9s_linear_infinite_reverse] pointer-events-none">
-                <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-violet-300 shadow-[0_0_12px_3px_rgba(167,139,250,0.8)]" />
-                <span className="absolute top-1/2 -right-1 -translate-y-1/2 w-1 h-1 rounded-full bg-white shadow-[0_0_8px_2px_rgba(255,255,255,0.7)]" />
-              </div>
+              {/* Dynamic 3D Tornado Funnel Vortex Canvas */}
+              <TornadoLoaderCanvas progress={progress} />
 
               {/* Completion burst */}
               {progress === 100 && (
@@ -342,11 +320,17 @@ export default function PageLoader() {
                   className="absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 pointer-events-none"
                   style={{ animation: "loaderShimmer 2.8s ease-in-out 1.4s infinite" }}
                 />
-                <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse shadow-[0_0_8px_#22d3ee]" />
-                <span className="relative font-mono text-[11px] sm:text-xs text-violet-300 font-semibold tracking-[0.2em] uppercase">
+                <div className="flex items-center gap-1">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#8b5cf6] shadow-[0_0_6px_#8b5cf6]" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#06b6d4] shadow-[0_0_6px_#06b6d4]" />
+                </div>
+                <span className="relative font-mono text-[11px] sm:text-xs text-zinc-100 font-semibold tracking-[0.2em] uppercase">
                   Drawn to Better.
                 </span>
-                <span className="w-1.5 h-1.5 rounded-full bg-violet-400 animate-pulse shadow-[0_0_8px_#8b5cf6]" />
+                <div className="flex items-center gap-1">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#10b981] shadow-[0_0_6px_#10b981]" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#f59e0b] shadow-[0_0_6px_#f59e0b]" />
+                </div>
               </motion.div>
 
               <motion.p
@@ -355,7 +339,8 @@ export default function PageLoader() {
                 transition={{ duration: 0.7, ease: EASE_OUT_EXPO, delay: 0.8 }}
                 className="text-xs sm:text-sm text-zinc-400 font-normal leading-relaxed max-w-sm px-4"
               >
-                A hidden pull toward progress and better solutions.
+                A hidden pull toward <span className="text-[#8b5cf6] font-medium">progress</span> and{" "}
+                <span className="text-[#06b6d4] font-medium">better solutions</span>.
               </motion.p>
             </div>
 
@@ -378,7 +363,7 @@ export default function PageLoader() {
               className="w-64 sm:w-80 h-[3px] bg-white/[0.08] rounded-full p-[1px] relative shadow-[inset_0_1px_3px_rgba(0,0,0,0.8)] mb-4"
             >
               <motion.div
-                className="h-full rounded-full bg-gradient-to-r from-violet-600 via-indigo-500 to-cyan-400 relative shadow-[0_0_14px_rgba(34,211,238,0.6)]"
+                className="h-full rounded-full bg-gradient-to-r from-[#8b5cf6] via-[#06b6d4] to-[#10b981] relative shadow-[0_0_14px_rgba(34,211,238,0.6)]"
                 style={{ width: `${progress}%` }}
                 transition={{ ease: "easeOut", duration: 0.1 }}
               >

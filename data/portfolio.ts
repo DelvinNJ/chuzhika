@@ -62,9 +62,9 @@ export const PORTFOLIO_DATA = {
 
   stats: [
     { label: "Completed Projects", value: 38, suffix: "+", description: "Production deployments across iOS, Android & Cloud Web" },
-    { label: "Native Mobile Apps", value: 16, suffix: "", description: "Published on App Store & Google Play Store" },
-    { label: "Years Experience", value: 6, suffix: "+", description: "Continuous evolution across full-stack engineering" },
-    { label: "Performance Score", value: 99, suffix: "%", description: "Average Lighthouse & frame-rate stability (60/120fps)" },
+    { label: "Native Mobile Apps", value: 2, suffix: "^", description: "Published on App Store & Google Play Store" },
+    { label: "Years Experience", value: 4, suffix: "+", description: "Continuous evolution across full-stack engineering" },
+    { label: "Performance Score", value: 98, suffix: "%", description: "Average Lighthouse & frame-rate stability (60/120fps)" },
   ] as StatItem[],
 
   services: [

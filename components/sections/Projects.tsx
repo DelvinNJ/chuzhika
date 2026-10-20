@@ -69,16 +69,26 @@ export default function Projects() {
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-12 sm:mb-16">
           <div className="max-w-2xl">
             <div className="flex items-center gap-2 mb-4">
+              <div className="flex items-center gap-1.5 mr-1">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#8b5cf6]" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#06b6d4]" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#10b981]" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#f59e0b]" />
+              </div>
               <span className="text-xs uppercase font-mono tracking-widest text-violet-400">
                 [ 03 // SELECTED PRODUCTIONS ]
               </span>
               <div className="h-[1px] w-12 bg-violet-500/30" />
             </div>
             <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white mb-4">
-              Engineered with <span className="gradient-text">surgical intent.</span>
+              Engineered with <span className="text-[#06b6d4]">surgical intent</span> and{" "}
+              <span className="text-[#10b981]">production speed.</span>
             </h2>
             <p className="text-sm sm:text-base text-zinc-400 leading-relaxed font-normal">
-              High-throughput cloud web platforms and native mobile architectures crafted for sub-100ms latency, fluid micro-interactions, and visual distinction.
+              High-throughput <span className="text-[#10b981] font-medium">cloud web platforms</span> and native{" "}
+              <span className="text-[#06b6d4] font-medium">mobile architectures</span> crafted for{" "}
+              <span className="text-[#8b5cf6] font-medium">sub-100ms latency</span>, fluid micro-interactions, and{" "}
+              <span className="text-[#f59e0b] font-medium">visual distinction</span>.
             </p>
           </div>
 
@@ -86,33 +96,48 @@ export default function Projects() {
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
             {/* Category Filter Pills */}
             <div className="flex items-center p-1.5 rounded-2xl bg-[#0c0c1a]/80 backdrop-blur-xl border border-white/[0.08] shadow-inner">
-              {(["All", "Mobile App", "Web App"] as FilterCategory[]).map((cat) => {
-                const isSelected = activeCategory === cat;
+              {(
+                [
+                  { id: "All", label: "All Systems", color: "#8b5cf6" },
+                  { id: "Mobile App", label: "Mobile", color: "#06b6d4" },
+                  { id: "Web App", label: "Web", color: "#10b981" },
+                ] as const
+              ).map((cat) => {
+                const isSelected = activeCategory === cat.id;
                 const count =
-                  cat === "All"
+                  cat.id === "All"
                     ? PORTFOLIO_DATA.projects.length
-                    : PORTFOLIO_DATA.projects.filter((p) => p.category === cat).length;
+                    : PORTFOLIO_DATA.projects.filter((p) => p.category === cat.id).length;
 
                 return (
                   <button
-                    key={cat}
-                    onClick={() => setActiveCategory(cat)}
+                    key={cat.id}
+                    onClick={() => setActiveCategory(cat.id as FilterCategory)}
                     className={`relative px-3.5 py-1.5 rounded-xl text-xs font-mono font-medium tracking-wider transition-all duration-300 ${
-                      isSelected ? "text-white shadow-[0_0_20px_rgba(139,92,246,0.3)]" : "text-zinc-400 hover:text-zinc-200"
+                      isSelected ? "text-white" : "text-zinc-400 hover:text-zinc-200"
                     }`}
                   >
                     {isSelected && (
                       <motion.div
                         layoutId="activeProjectFilter"
-                        className="absolute inset-0 bg-gradient-to-r from-violet-600/80 to-indigo-600/80 rounded-xl border border-violet-400/30"
+                        className="absolute inset-0 rounded-xl"
+                        style={{
+                          backgroundColor: `${cat.color}25`,
+                          border: `1px solid ${cat.color}60`,
+                          boxShadow: `0 0 15px ${cat.color}35`,
+                        }}
                         transition={{ type: "spring", stiffness: 350, damping: 28 }}
                       />
                     )}
                     <span className="relative z-10 flex items-center gap-1.5">
-                      {cat === "All" ? "All Systems" : cat === "Mobile App" ? "Mobile" : "Web"}
+                      <span
+                        className="w-1.5 h-1.5 rounded-full"
+                        style={{ backgroundColor: isSelected ? cat.color : "#52525b" }}
+                      />
+                      <span>{cat.label}</span>
                       <span
                         className={`text-[10px] px-1.5 py-0.2 rounded-md ${
-                          isSelected ? "bg-white/20 text-white" : "bg-white/[0.05] text-zinc-500"
+                          isSelected ? "bg-white/20 text-white font-bold" : "bg-white/[0.05] text-zinc-500"
                         }`}
                       >
                         {count}

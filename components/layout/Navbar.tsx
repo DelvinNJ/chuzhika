@@ -80,17 +80,25 @@ export default function Navbar() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 sm:px-8 flex items-center justify-between">
-          {/* Logo */}
+          {/* Logo with Increased Prominence */}
           <a
             href="#hero"
             onClick={(e) => handleNavClick(e, "#hero")}
-            className="group flex items-center gap-3 text-xl font-bold tracking-tight text-white"
+            className="group flex items-center gap-3.5 text-xl font-bold tracking-tight text-white py-1"
             data-cursor-hover
           >
-            <Logo size={46} showGlow={true} />
-            <span className="tracking-wider uppercase text-base font-bold text-zinc-100 group-hover:text-violet-300 transition-colors">
-              Chuzhika
-            </span>
+            <Logo size={56} showGlow={true} />
+            <div className="flex items-center gap-2">
+              <span className="tracking-wider uppercase text-lg sm:text-xl font-black text-zinc-100 group-hover:text-violet-300 transition-colors">
+                Chuzhika
+              </span>
+              <div className="hidden sm:flex items-center gap-1 ml-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#8b5cf6] shadow-[0_0_6px_#8b5cf6]" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#06b6d4] shadow-[0_0_6px_#06b6d4]" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#10b981] shadow-[0_0_6px_#10b981]" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#f59e0b] shadow-[0_0_6px_#f59e0b]" />
+              </div>
+            </div>
           </a>
 
           {/* Desktop Navigation */}

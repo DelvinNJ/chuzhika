@@ -95,6 +95,12 @@ export default function Contact() {
       <div className="max-w-7xl mx-auto px-6 sm:px-8 relative z-10">
         {/* Section Tag */}
         <div className="flex items-center gap-2 mb-4">
+          <div className="flex items-center gap-1.5 mr-1">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#8b5cf6]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#06b6d4]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#10b981]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#f59e0b]" />
+          </div>
           <span className="text-xs uppercase font-mono tracking-widest text-violet-400">
             [ 05 // INITIALIZE COLLABORATION ]
           </span>
@@ -106,22 +112,26 @@ export default function Contact() {
           <div className="lg:col-span-5 flex flex-col gap-8">
             <div>
               <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white mb-4">
-                Let&apos;s architect <span className="gradient-text">what&apos;s next.</span>
+                Let&apos;s architect <span className="text-[#8b5cf6]">what&apos;s next</span> with{" "}
+                <span className="text-[#06b6d4]">surgical precision.</span>
               </h2>
               <p className="text-sm sm:text-base text-zinc-400 leading-relaxed">
-                Have a mobile app to build or a web ecosystem to scale? I partner with forward-thinking teams to engineer production-ready digital products with uncompromising speed and visual luxury.
+                Have a <span className="text-[#06b6d4] font-medium">mobile app to build</span> or a{" "}
+                <span className="text-[#10b981] font-medium">web ecosystem to scale</span>? I partner with forward-thinking teams to engineer production-ready digital products with{" "}
+                <span className="text-[#8b5cf6] font-medium">uncompromising speed</span> and{" "}
+                <span className="text-[#f59e0b] font-medium">visual luxury</span>.
               </p>
             </div>
 
-            {/* Availability Pill */}
-            <div className="glass-card p-5 rounded-2xl border border-white/[0.08] flex items-center gap-4">
+            {/* Availability Pill with Emerald Glow */}
+            <div className="glass-card p-5 rounded-2xl border border-white/[0.08] flex items-center gap-4 hover:border-[#10b981]/50 transition-colors">
               <span className="relative flex h-3 w-3">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500 shadow-[0_0_10px_#10b981]" />
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#10b981] opacity-75" />
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-[#10b981] shadow-[0_0_10px_#10b981]" />
               </span>
               <div>
-                <span className="text-xs font-mono uppercase tracking-wider text-emerald-400 block font-semibold">
-                  Status: Available
+                <span className="text-xs font-mono uppercase tracking-wider text-[#10b981] block font-semibold">
+                  Status: Available for Q3/Q4
                 </span>
                 <span className="text-xs text-zinc-400">
                   Accepting selected client builds & contracts
@@ -131,26 +141,28 @@ export default function Contact() {
 
             {/* Direct Channel Cards */}
             <div className="flex flex-col gap-3">
-              <div className="p-4 rounded-2xl glass-panel border border-white/[0.06] flex items-center justify-between">
+              <div className="p-4 rounded-2xl glass-panel border border-white/[0.06] hover:border-[#8b5cf6]/40 flex items-center justify-between transition-colors">
                 <div>
                   <span className="text-[11px] font-mono uppercase text-zinc-500 block">Direct Email</span>
                   <a
                     href={`mailto:${PORTFOLIO_DATA.profile.email}`}
-                    className="text-sm font-mono text-white hover:text-cyan-400 transition-colors"
+                    className="text-sm font-mono text-white hover:text-[#06b6d4] transition-colors"
                     data-cursor-hover
                   >
                     {PORTFOLIO_DATA.profile.email}
                   </a>
                 </div>
-                <span className="text-xs font-mono text-zinc-500">24h SLA</span>
+                <span className="text-xs font-mono text-[#f59e0b] px-2 py-0.5 rounded bg-[#f59e0b]/10 border border-[#f59e0b]/20">
+                  &lt; 24h SLA
+                </span>
               </div>
 
-              <div className="p-4 rounded-2xl glass-panel border border-white/[0.06] flex items-center justify-between">
+              <div className="p-4 rounded-2xl glass-panel border border-white/[0.06] hover:border-[#06b6d4]/40 flex items-center justify-between transition-colors">
                 <div>
                   <span className="text-[11px] font-mono uppercase text-zinc-500 block">Location & Zone</span>
                   <span className="text-sm text-zinc-200">{PORTFOLIO_DATA.profile.location}</span>
                 </div>
-                <span className="text-xs font-mono text-violet-400">UTC / Worldwide</span>
+                <span className="text-xs font-mono text-[#06b6d4]">UTC / Worldwide</span>
               </div>
             </div>
 

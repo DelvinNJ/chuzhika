@@ -119,7 +119,12 @@ export default function Process() {
         {/* ========================================================= */}
         <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-8 sm:mb-14">
           <div className="flex items-center gap-2 mb-3 sm:mb-4">
-            <div className="h-[1px] w-6 sm:w-8 bg-violet-500/30" />
+            <div className="flex items-center gap-1.5 mr-1">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#8b5cf6]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#06b6d4]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#10b981]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#f59e0b]" />
+            </div>
             <span className="text-[11px] sm:text-xs uppercase font-mono tracking-widest text-violet-400 font-semibold">
               [ 04 // THE EXECUTION PROTOCOL ]
             </span>
@@ -127,12 +132,16 @@ export default function Process() {
           </div>
 
           <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white mb-3">
-            Autonomous engineering at{" "}
-            <span className="gradient-text">circuit speed.</span>
+            Autonomous engineering at <span className="text-[#8b5cf6]">circuit</span>{" "}
+            <span className="text-[#06b6d4]">speed.</span>
           </h2>
 
           <p className="text-zinc-400 text-xs sm:text-sm md:text-base leading-relaxed max-w-2xl font-normal px-2">
-            A deterministic, closed-loop cybernetic pipeline engineered to transform complex product intent into battle-tested, high-performance infrastructure.
+            A deterministic, closed-loop cybernetic pipeline transforming{" "}
+            <span className="text-[#8b5cf6] font-medium">product intent</span> into{" "}
+            <span className="text-[#06b6d4] font-medium">tactile interfaces</span>,{" "}
+            <span className="text-[#10b981] font-medium">hardened engines</span>, and{" "}
+            <span className="text-[#f59e0b] font-medium">global edge distribution</span>.
           </p>
 
           {/* Circuit Bus Status Bar & Mode Switch */}

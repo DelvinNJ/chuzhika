@@ -33,6 +33,13 @@ function getServiceIcon(type: ServiceItem["icon"]) {
   }
 }
 
+const SERVICE_THEMES: Record<string, { accent: string; rgb: string; tag: string }> = {
+  "01": { accent: "#8b5cf6", rgb: "139, 92, 246", tag: "NATIVE MOBILE" },
+  "02": { accent: "#06b6d4", rgb: "6, 182, 212", tag: "MODERN WEB" },
+  "03": { accent: "#10b981", rgb: "16, 185, 129", tag: "KINETIC UI/UX" },
+  "04": { accent: "#f59e0b", rgb: "245, 158, 11", tag: "EDGE INFRA" },
+};
+
 export default function Services() {
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
@@ -70,21 +77,28 @@ export default function Services() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
             <div className="flex items-center gap-2 mb-4">
+              <div className="flex items-center gap-1.5 mr-1">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#8b5cf6]" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#06b6d4]" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#10b981]" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#f59e0b]" />
+              </div>
               <span className="text-xs uppercase font-mono tracking-widest text-violet-400">
                 [ 02 // CAPABILITIES & SERVICES ]
               </span>
               <div className="h-[1px] w-12 bg-violet-500/30" />
             </div>
             <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white">
-              End-to-end craft from <span className="gradient-text">concept to store.</span>
+              End-to-end craft from <span className="text-[#8b5cf6]">concept</span> to{" "}
+              <span className="text-[#06b6d4]">production</span> <span className="text-[#10b981]">speed.</span>
             </h2>
           </div>
           <p className="text-sm text-zinc-400 max-w-md">
-            Specialized engineering services tailored for visionary tech companies, funded startups, and brands requiring native mobile speed and web elegance.
+            Specialized engineering services tailored for visionary tech companies, funded startups, and brands requiring <span className="text-[#8b5cf6]">native mobile speed</span> and <span className="text-[#06b6d4]">web elegance</span>.
           </p>
         </div>
 
-        {/* Staggered Services Grid */}
+        {/* Staggered Services Grid with 4 Quad-Accent Themes */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -92,72 +106,106 @@ export default function Services() {
           viewport={{ once: true, margin: "-80px" }}
           className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8"
         >
-          {PORTFOLIO_DATA.services.map((service) => (
-            <motion.div
-              key={service.id}
-              variants={cardVariants}
-              className="glass-card p-8 sm:p-10 rounded-3xl border border-white/[0.08] relative group flex flex-col justify-between overflow-hidden hover:border-violet-500/50 transition-all duration-500"
-            >
-              {/* Corner Ambient Glow on hover */}
-              <div className="absolute -top-24 -right-24 w-48 h-48 bg-violet-600/20 rounded-full blur-[60px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+          {PORTFOLIO_DATA.services.map((service) => {
+            const theme = SERVICE_THEMES[service.number] || SERVICE_THEMES["01"];
 
-              <div>
-                {/* Header with Number and Icon */}
-                <div className="flex items-center justify-between mb-8">
-                  <div className="w-14 h-14 rounded-2xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-violet-400 group-hover:text-cyan-300 group-hover:border-violet-500/40 group-hover:bg-violet-600/10 transition-all shadow-inner">
-                    {getServiceIcon(service.icon)}
-                  </div>
-                  <span className="font-mono text-xs uppercase tracking-widest text-zinc-500 group-hover:text-violet-400 transition-colors">
-                    SERVICE // {service.number}
-                  </span>
-                </div>
+            return (
+              <motion.div
+                key={service.id}
+                variants={cardVariants}
+                className="glass-card p-8 sm:p-10 rounded-3xl border border-white/[0.08] relative group flex flex-col justify-between overflow-hidden transition-all duration-500"
+                style={{
+                  boxShadow: "none",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderColor = theme.accent;
+                  e.currentTarget.style.boxShadow = `0 0 35px rgba(${theme.rgb}, 0.2)`;
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.borderColor = "";
+                  e.currentTarget.style.boxShadow = "none";
+                }}
+              >
+                {/* Corner Ambient Glow on hover */}
+                <div
+                  className="absolute -top-24 -right-24 w-48 h-48 rounded-full blur-[70px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                  style={{
+                    backgroundColor: `rgba(${theme.rgb}, 0.18)`,
+                  }}
+                />
 
-                {/* Title and Description */}
-                <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-violet-200 transition-colors">
-                  {service.title}
-                </h3>
-                <p className="text-sm text-violet-300/80 font-mono mb-4">
-                  {service.shortDesc}
-                </p>
-                <p className="text-sm text-zinc-400 leading-relaxed mb-8">
-                  {service.description}
-                </p>
-              </div>
-
-              {/* Deliverables & Tech Tags */}
-              <div className="pt-6 border-t border-white/[0.06] flex flex-col gap-4">
                 <div>
-                  <span className="text-[11px] font-mono uppercase tracking-wider text-zinc-500 block mb-2.5">
-                    Core Deliverables:
-                  </span>
-                  <div className="grid grid-cols-2 gap-2 text-xs text-zinc-300">
-                    {service.deliverables.map((item) => (
-                      <div key={item} className="flex items-center gap-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-violet-400/80" />
-                        <span>{item}</span>
-                      </div>
-                    ))}
+                  {/* Header with Number and Icon */}
+                  <div className="flex items-center justify-between mb-8">
+                    <div
+                      className="w-14 h-14 rounded-2xl bg-white/[0.04] border flex items-center justify-center transition-all shadow-inner"
+                      style={{
+                        borderColor: `rgba(${theme.rgb}, 0.3)`,
+                        color: theme.accent,
+                      }}
+                    >
+                      {getServiceIcon(service.icon)}
+                    </div>
+                    <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-widest">
+                      <span className="text-[10px] px-2 py-0.5 rounded border text-zinc-400" style={{ borderColor: `rgba(${theme.rgb}, 0.3)` }}>
+                        {theme.tag}
+                      </span>
+                      <span className="font-bold" style={{ color: theme.accent }}>
+                        0{service.number}
+                      </span>
+                    </div>
                   </div>
+
+                  {/* Title and Description */}
+                  <h3 className="text-2xl font-bold text-white mb-2 transition-colors group-hover:text-white">
+                    {service.title}
+                  </h3>
+                  <p className="text-xs sm:text-sm font-mono mb-4" style={{ color: theme.accent }}>
+                    {service.shortDesc}
+                  </p>
+                  <p className="text-sm text-zinc-400 leading-relaxed mb-8">
+                    {service.description}
+                  </p>
                 </div>
 
-                <div className="pt-2">
-                  <span className="text-[11px] font-mono uppercase tracking-wider text-zinc-500 block mb-2">
-                    Technologies:
-                  </span>
-                  <div className="flex flex-wrap gap-1.5">
-                    {service.techStack.map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-2.5 py-1 rounded-md text-[11px] font-mono bg-white/[0.03] text-zinc-400 border border-white/[0.06] group-hover:border-violet-500/30 group-hover:text-zinc-200 transition-colors"
-                      >
-                        {tech}
-                      </span>
-                    ))}
+                {/* Deliverables & Tech Tags */}
+                <div className="pt-6 border-t border-white/[0.06] flex flex-col gap-4">
+                  <div>
+                    <span className="text-[11px] font-mono uppercase tracking-wider text-zinc-500 block mb-2.5">
+                      Core Deliverables:
+                    </span>
+                    <div className="grid grid-cols-2 gap-2 text-xs text-zinc-300 font-mono">
+                      {service.deliverables.map((item) => (
+                        <div key={item} className="flex items-center gap-2">
+                          <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: theme.accent }} />
+                          <span className="truncate">{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="pt-2">
+                    <span className="text-[11px] font-mono uppercase tracking-wider text-zinc-500 block mb-2">
+                      Technologies:
+                    </span>
+                    <div className="flex flex-wrap gap-1.5">
+                      {service.techStack.map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-2.5 py-1 rounded-md text-[11px] font-mono bg-white/[0.03] text-zinc-400 border border-white/[0.06] transition-colors"
+                          style={{
+                            boxShadow: "none",
+                          }}
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            );
+          })}
         </motion.div>
       </div>
     </section>
