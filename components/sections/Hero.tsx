@@ -7,12 +7,14 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { PORTFOLIO_DATA } from "@/data/portfolio";
 import { useSmoothScroll } from "@/components/providers/SmoothScrollProvider";
+import { useLoading } from "@/components/providers/LoadingContext";
 import MagneticButton from "@/components/ui/MagneticButton";
 import HeroCanvas from "@/components/ui/HeroCanvas";
 import { getAssetPath } from "@/utils/paths";
 
 export default function Hero() {
   const { scrollTo } = useSmoothScroll();
+  const { isReady } = useLoading();
   const sectionRef = useRef<HTMLElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const bgRef = useRef<HTMLDivElement>(null);
@@ -134,7 +136,7 @@ export default function Hero() {
         <motion.div
           variants={containerVariants}
           initial="hidden"
-          animate="visible"
+          animate={isReady ? "visible" : "hidden"}
           className="flex flex-col items-center"
         >
           {/* Status Badge */}
