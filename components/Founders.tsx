@@ -7,9 +7,11 @@ import { FOUNDERS_DATA, Founder } from "@/data/founders";
 
 function FounderCard({
   founder,
+  index = 0,
   direction = "center",
 }: {
   founder: Founder;
+  index?: number;
   direction?: "left" | "right" | "center";
 }) {
   const [imageError, setImageError] = useState(false);
@@ -59,8 +61,8 @@ function FounderCard({
           {/* Role Pill Overlay */}
           <div className="absolute bottom-3 left-3 px-3 py-1.5 rounded-xl bg-[#070710]/85 backdrop-blur-md border border-white/10 text-[11px] font-mono text-zinc-300 flex items-center gap-1.5">
             <span className="w-1.5 h-1.5 rounded-full bg-[#8b5cf6] shadow-[0_0_6px_#8b5cf6]" />
-            <span>Lead Architect // </span>
-            <span className="text-[#8b5cf6] font-bold">01</span>
+            <span>{founder.role.split("&")[0].trim()} // </span>
+            <span className="text-[#8b5cf6] font-bold">0{index + 1}</span>
           </div>
         </div>
 
@@ -72,7 +74,9 @@ function FounderCard({
           <p className="text-sm font-semibold font-mono text-[#8b5cf6] mt-1 flex items-center gap-2">
             <span>{founder.role}</span>
             <span className="text-zinc-600">•</span>
-            <span className="text-[#06b6d4] text-xs font-normal">Full-Stack Specialist</span>
+            <span className="text-[#06b6d4] text-xs font-normal">
+              {founder.id === "founder" ? "Full-Stack Specialist" : "Product & Design Lead"}
+            </span>
           </p>
         </div>
 
@@ -154,20 +158,21 @@ export default function Founders() {
             <div className="h-[1px] w-8 bg-violet-500/30" />
           </div>
           <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white mb-4">
-            Meet the <span className="text-[#8b5cf6]">Founder & Architect.</span>
+            Meet the <span className="text-[#8b5cf6]">{FOUNDERS_DATA.length > 1 ? "Founders & Leadership." : "Founder & Architect."}</span>
           </h2>
           <p className="text-sm sm:text-base text-zinc-400 leading-relaxed">
             The engineering leadership driving <span className="text-[#8b5cf6]">high-precision native runtimes</span>, <span className="text-[#06b6d4]">120Hz micro-interactions</span>, and <span className="text-[#10b981]">hardened cloud architectures</span>.
           </p>
         </div>
 
-        {/* Founder Card - Centered Single Presentation */}
-        <div className="max-w-xl mx-auto">
-          {FOUNDERS_DATA.map((founder) => (
+        {/* Founders Grid */}
+        <div className={`grid grid-cols-1 ${FOUNDERS_DATA.length > 1 ? "lg:grid-cols-2 gap-8 max-w-5xl" : "max-w-xl"} mx-auto`}>
+          {FOUNDERS_DATA.map((founder, index) => (
             <FounderCard
               key={founder.id}
               founder={founder}
-              direction="center"
+              index={index}
+              direction={FOUNDERS_DATA.length > 1 ? (index === 0 ? "left" : "right") : "center"}
             />
           ))}
         </div>

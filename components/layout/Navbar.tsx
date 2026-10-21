@@ -4,7 +4,6 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { PORTFOLIO_DATA } from "@/data/portfolio";
 import { useSmoothScroll } from "@/components/providers/SmoothScrollProvider";
-import MagneticButton from "@/components/ui/MagneticButton";
 import Logo from "@/components/ui/Logo";
 import { useLoading } from "@/components/providers/LoadingContext";
 
@@ -132,16 +131,19 @@ export default function Navbar() {
 
           {/* Right Action CTA */}
           <div className="hidden md:flex items-center gap-4">
-            <MagneticButton
-              as="a"
+            <a
               href="#contact"
-              onClick={() => scrollTo("#contact", { offset: -70 })}
-              className="relative inline-flex items-center justify-center px-6 py-2.5 text-xs font-semibold uppercase tracking-wider text-white rounded-full overflow-hidden group bg-gradient-to-r from-violet-600 via-indigo-600 to-violet-700 hover:from-violet-500 hover:to-indigo-500 shadow-[0_0_20px_rgba(139,92,246,0.35)] hover:shadow-[0_0_30px_rgba(139,92,246,0.6)] transition-all border border-violet-400/30"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollTo("#contact", { offset: -70 });
+              }}
+              className="relative inline-flex items-center justify-center px-6 py-2.5 text-xs font-semibold uppercase tracking-wider text-white rounded-full overflow-hidden group bg-gradient-to-r from-violet-600 via-indigo-600 to-violet-700 hover:from-violet-500 hover:to-indigo-500 shadow-[0_0_20px_rgba(139,92,246,0.35)] hover:shadow-[0_0_30px_rgba(139,92,246,0.6)] transition-all border border-violet-400/30 cursor-pointer"
+              data-cursor-hover
             >
               <span className="relative z-10 flex items-center gap-2 text-white">
                 Let&apos;s Build
                 <svg
-                  className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform text-white"
+                  className="w-3.5 h-3.5 transform group-hover:translate-x-1.5 transition-transform duration-300 ease-out text-white"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -149,7 +151,7 @@ export default function Navbar() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
               </span>
-            </MagneticButton>
+            </a>
           </div>
 
           {/* Mobile Hamburger Toggle */}

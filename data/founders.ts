@@ -19,15 +19,26 @@ export interface Founder {
 export const FOUNDERS_DATA: Founder[] = [
   {
     id: "founder",
-    name: "Alex Vance",
+    name: "Delvin N J",
     role: "Founder & Lead Architect",
     bio: "Systems architect and mobile engineer specializing in reactive full-stack runtimes, high-throughput backend pipelines, and low-latency native iOS/Android ecosystems.",
     image: getAssetPath("/images/founders/professional-founder-headshot.png"),
-    skills: ["Architecture", "React Native", "Next.js", "TypeScript", "Distributed Systems", "Swift"],
+    skills: ["Architecture", "React Native", "Next.js", "TypeScript", "Distributed Systems", "React native"],
     socials: [
-      { platform: "GitHub", url: "https://github.com", label: "Alex Vance on GitHub" },
-      { platform: "LinkedIn", url: "https://linkedin.com", label: "Alex Vance on LinkedIn" },
-      { platform: "Twitter / X", url: "https://twitter.com", label: "Alex Vance on Twitter" },
+      { platform: "GitHub", url: "https://github.com/DelvinNJ", label: "Delvin N J on GitHub" },
+      { platform: "LinkedIn", url: "https://www.linkedin.com/in/delvin-n-j-1b72a221b", label: "Delvin N J on LinkedIn" }
+    ],
+  },
+  {
+    id: "co-founder",
+    name: "Swathy Krishna",
+    role: "Co-Founder & Product Lead",
+    bio: "Product strategist and interface designer driving scalable design systems, user experience research, and high-conversion web & mobile product journeys.",
+    image: getAssetPath("/images/founders/co-founder.jpg"),
+    skills: ["Product Strategy", "UI/UX Design", "Design Systems", "User Research", "Frontend Engineering", "Agile Leadership"],
+    socials: [
+      { platform: "LinkedIn", url: "https://www.linkedin.com", label: "Co-Founder on LinkedIn" },
+      { platform: "GitHub", url: "https://github.com", label: "Co-Founder on GitHub" }
     ],
   },
 ];
