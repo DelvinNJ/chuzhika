@@ -23,28 +23,32 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Chuzhika | Mobile & Web Engineer Portfolio",
+  title: "Chuzhika | Mobile & Web Engineering (Flutter, React Native, .NET, PHP, React Js, Angular)",
   description:
-    "Portfolio of Chuzhika — Senior Mobile & Web Engineer specializing in iOS, Android, Next.js, reactive web architectures, and dark futuristic design systems.",
+    "Engineering high-performance mobile apps with Flutter & React Native, enterprise backends in .NET & PHP, and modern reactive web platforms with React Js & Angular.",
   keywords: [
     "Chuzhika",
-    "Mobile Developer",
-    "Web Developer",
-    "iOS Developer",
-    "Android Developer",
+    "Flutter",
     "React Native",
-    "Next.js",
+    ".NET",
+    "PHP",
+    "React Js",
+    "Angular",
+    "Web Technologies",
+    "Mobile Developer",
+    "Full Stack Engineer",
     "TypeScript",
-    "GSAP",
-    "Creative Developer",
-    "Frontend Architect",
+    "Dart",
+    "C#",
+    "Laravel",
+    "Next.js",
   ],
   authors: [{ name: "Chuzhika" }],
   creator: "Chuzhika",
   openGraph: {
-    title: "Chuzhika | Mobile & Web Engineer Portfolio",
+    title: "Chuzhika | Mobile & Web Engineering",
     description:
-      "Crafting high-performance native mobile apps and next-generation web architectures with dark futuristic aesthetics and fluid kinetic experiences.",
+      "Specialized in Flutter, React Native, .NET, PHP, React Js, Angular, and modern web technologies.",
     url: "https://chuzhika.dev",
     siteName: "Chuzhika Portfolio",
     images: [
@@ -60,9 +64,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Chuzhika | Mobile & Web Engineer Portfolio",
+    title: "Chuzhika | Mobile & Web Engineering",
     description:
-      "High-performance native mobile apps and next-generation web architectures.",
+      "Flutter, React Native, .NET, PHP, React Js, Angular, and modern web architectures.",
     images: ["/images/hero-fallback.jpg"],
     creator: "@chuzhika_tech",
   },

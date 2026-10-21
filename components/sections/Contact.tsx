@@ -281,10 +281,10 @@ export default function Contact() {
                         onChange={handleChange}
                         className="w-full px-4 py-3 rounded-xl bg-[#0d0d18] border border-white/[0.08] focus:border-violet-500/80 text-sm text-zinc-200 outline-none transition-all cursor-pointer"
                       >
-                        <option value="Mobile App">Mobile Application (iOS / Android)</option>
-                        <option value="Web App">Modern Web Application (Next.js / React)</option>
-                        <option value="Full Stack">Full Stack Ecosystem (Mobile + Web + API)</option>
-                        <option value="UI/UX System">Design System & Kinetic UI Engineering</option>
+                        <option value="Mobile App">Mobile Application (Flutter / React Native)</option>
+                        <option value="Web App">Web Application (React Js / Angular / Next.js)</option>
+                        <option value="Backend System">Enterprise Backend & API (.NET / PHP)</option>
+                        <option value="Full Stack">Full Stack Solution (Mobile + Web + .NET/PHP)</option>
                         <option value="Consulting">Technical Architecture & Code Audit</option>
                       </select>
                     </div>

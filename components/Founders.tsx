@@ -75,7 +75,9 @@ function FounderCard({
             <span>{founder.role}</span>
             <span className="text-zinc-600">•</span>
             <span className="text-[#06b6d4] text-xs font-normal">
-              {founder.id === "founder" ? "Full-Stack Specialist" : "Product & Design Lead"}
+              {founder.id === "founder"
+                ? "Flutter • React Native • .NET • PHP"
+                : "React Js • Angular • .NET"}
             </span>
           </p>
         </div>
@@ -161,7 +163,7 @@ export default function Founders() {
             Meet the <span className="text-[#8b5cf6]">{FOUNDERS_DATA.length > 1 ? "Founders & Leadership." : "Founder & Architect."}</span>
           </h2>
           <p className="text-sm sm:text-base text-zinc-400 leading-relaxed">
-            The engineering leadership driving <span className="text-[#8b5cf6]">high-precision native runtimes</span>, <span className="text-[#06b6d4]">120Hz micro-interactions</span>, and <span className="text-[#10b981]">hardened cloud architectures</span>.
+            The engineering leadership driving <span className="text-[#8b5cf6]">cross-platform mobile apps (Flutter, React Native)</span>, <span className="text-[#06b6d4]">robust backends (.NET, PHP)</span>, and <span className="text-[#10b981]">dynamic web platforms (React Js, Angular)</span>.
           </p>
         </div>
 

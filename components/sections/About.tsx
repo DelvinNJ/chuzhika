@@ -108,20 +108,21 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-20">
           <div className="lg:col-span-7">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white leading-tight">
-              Bridging <span className="text-[#8b5cf6]">high-performance native systems</span> with{" "}
-              <span className="text-[#8b5cf6]">interactive web luxury.</span>
+              Bridging <span className="text-[#8b5cf6]">multi-platform mobile systems</span> with{" "}
+              <span className="text-[#8b5cf6]">enterprise web engineering.</span>
             </h2>
           </div>
           <div className="lg:col-span-5 flex flex-col gap-4 text-zinc-400 text-base leading-relaxed">
             <p>
-              I am a specialized software engineer and digital architect focused on building{" "}
-              <span className="text-[#8b5cf6] font-medium">mobile applications for iOS & Android</span> alongside immersive,{" "}
-              <span className="text-[#06b6d4] font-medium">ultra-responsive web platforms</span>.
+              We are specialized engineers focused on building{" "}
+              <span className="text-[#8b5cf6] font-medium">mobile apps using Flutter & React Native</span> alongside robust,{" "}
+              <span className="text-[#06b6d4] font-medium">enterprise .NET & PHP backends</span> and{" "}
+              <span className="text-[#10b981] font-medium">reactive React Js & Angular web platforms</span>.
             </p>
             <p>
-              My engineering philosophy revolves around{" "}
-              <span className="text-[#10b981] font-medium">sub-millisecond interaction feedback</span>, deterministic typing, and{" "}
-              <span className="text-[#f59e0b] font-medium">bespoke design systems</span> that feel as tactile as hardware.
+              Our engineering philosophy revolves around{" "}
+              <span className="text-[#10b981] font-medium">clean architectural patterns</span>, scalable codebases, and{" "}
+              <span className="text-[#f59e0b] font-medium">modern web technologies</span> delivering high performance across all screens.
             </p>
           </div>
         </div>
@@ -156,7 +157,7 @@ export default function About() {
               >
                 <span className="w-2 h-2 rounded-full bg-[#06b6d4] shadow-[0_0_8px_#06b6d4]" />
                 <span className="text-xs font-mono text-zinc-200">
-                  <span className="text-[#8b5cf6]">Mobile</span> + <span className="text-[#06b6d4]">Web</span> Architect
+                  <span className="text-[#8b5cf6]">Mobile</span> + <span className="text-[#06b6d4]">Full-Stack</span> Stack
                 </span>
               </motion.div>
 
@@ -168,12 +169,14 @@ export default function About() {
                 className="absolute bottom-6 right-6 px-4 py-2.5 rounded-xl glass-panel border border-white/15 flex items-center gap-3 shadow-2xl backdrop-blur-md"
               >
                 <div className="flex -space-x-1.5">
-                  <div className="w-5 h-5 rounded-full bg-[#8b5cf6] flex items-center justify-center text-[9px] font-bold text-white">RN</div>
-                  <div className="w-5 h-5 rounded-full bg-[#06b6d4] flex items-center justify-center text-[9px] font-bold text-white">N16</div>
-                  <div className="w-5 h-5 rounded-full bg-[#10b981] flex items-center justify-center text-[9px] font-bold text-white">TS</div>
-                  <div className="w-5 h-5 rounded-full bg-[#f59e0b] flex items-center justify-center text-[9px] font-bold text-white">API</div>
+                  <div className="w-5 h-5 rounded-full bg-[#06b6d4] flex items-center justify-center text-[8px] font-bold text-white">FL</div>
+                  <div className="w-5 h-5 rounded-full bg-[#8b5cf6] flex items-center justify-center text-[8px] font-bold text-white">RN</div>
+                  <div className="w-5 h-5 rounded-full bg-[#10b981] flex items-center justify-center text-[8px] font-bold text-white">.NET</div>
+                  <div className="w-5 h-5 rounded-full bg-[#6366f1] flex items-center justify-center text-[8px] font-bold text-white">PHP</div>
+                  <div className="w-5 h-5 rounded-full bg-[#0ea5e9] flex items-center justify-center text-[8px] font-bold text-white">REA</div>
+                  <div className="w-5 h-5 rounded-full bg-[#ef4444] flex items-center justify-center text-[8px] font-bold text-white">NG</div>
                 </div>
-                <span className="text-xs font-mono text-zinc-300">Hardened Stack</span>
+                <span className="text-xs font-mono text-zinc-300">Core Stack</span>
               </motion.div>
             </div>
           </div>
@@ -183,40 +186,40 @@ export default function About() {
             <div className="glass-card p-5 sm:p-6 rounded-2xl border border-white/[0.08] hover:border-[#8b5cf6]/50 transition-colors">
               <h3 className="text-lg font-bold text-white mb-1.5 flex items-center gap-3">
                 <span className="text-[#8b5cf6] font-mono text-xs font-bold px-2 py-0.5 rounded bg-[#8b5cf6]/10 border border-[#8b5cf6]/20">01</span>
-                Native-Grade Mobile Fluidity
+                Flutter & React Native Mobile Engineering
               </h3>
               <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
-                Architecting gesture-driven mobile experiences with <span className="text-[#8b5cf6]">120Hz frame rates</span>, reactive state stores, offline synchronization, and hardware-accelerated animations.
+                Building fluid iOS & Android applications with <span className="text-[#8b5cf6]">Flutter & React Native</span>, featuring responsive reactive state stores, native hardware APIs, and 120Hz gesture smoothness.
               </p>
             </div>
 
             <div className="glass-card p-5 sm:p-6 rounded-2xl border border-white/[0.08] hover:border-[#06b6d4]/50 transition-colors">
               <h3 className="text-lg font-bold text-white mb-1.5 flex items-center gap-3">
                 <span className="text-[#06b6d4] font-mono text-xs font-bold px-2 py-0.5 rounded bg-[#06b6d4]/10 border border-[#06b6d4]/20">02</span>
-                Scalable Modern Web Architectures
+                React Js & Angular Web Applications
               </h3>
               <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
-                Leveraging <span className="text-[#06b6d4]">Next.js App Router</span>, edge functions, and kinetic GSAP orchestrations to build high-conversion, visually striking web applications.
+                Developing responsive, enterprise-grade SPAs and web platforms using <span className="text-[#06b6d4]">React Js and Angular</span> with clean modular design, high rendering efficiency, and state governance.
               </p>
             </div>
 
             <div className="glass-card p-5 sm:p-6 rounded-2xl border border-white/[0.08] hover:border-[#10b981]/50 transition-colors">
               <h3 className="text-lg font-bold text-white mb-1.5 flex items-center gap-3">
                 <span className="text-[#10b981] font-mono text-xs font-bold px-2 py-0.5 rounded bg-[#10b981]/10 border border-[#10b981]/20">03</span>
-                Design Engineering & Micro-Interactions
+                .NET & PHP Enterprise Backend Architecture
               </h3>
               <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
-                Eliminating the friction between creative UI and production code. Every transition, <span className="text-[#10b981]">spring constant</span>, and hover glow is crafted with artistic devotion.
+                Powering applications with high-throughput backend services in <span className="text-[#10b981]">.NET (C#) and PHP (Laravel)</span>, architected for multi-tenant scalability, resilient APIs, and enterprise databases.
               </p>
             </div>
 
             <div className="glass-card p-5 sm:p-6 rounded-2xl border border-white/[0.08] hover:border-[#f59e0b]/50 transition-colors">
               <h3 className="text-lg font-bold text-white mb-1.5 flex items-center gap-3">
                 <span className="text-[#f59e0b] font-mono text-xs font-bold px-2 py-0.5 rounded bg-[#f59e0b]/10 border border-[#f59e0b]/20">04</span>
-                Sub-Zero Latency Edge Infrastructure
+                Modern Web Technologies & UI Systems
               </h3>
               <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
-                Building distributed microservices with <span className="text-[#f59e0b]">sub-100ms API response pipelines</span>, strict TypeScript payloads, and high-availability cloud integrations.
+                Implementing modern <span className="text-[#f59e0b]">Web Technologies</span> with semantic markup, responsive layouts, Tailwind CSS, cross-browser compatibility, and accessible design principles.
               </p>
             </div>
           </div>
