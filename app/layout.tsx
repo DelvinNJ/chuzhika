@@ -68,13 +68,14 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: getAssetPath("/images/logo-transparent.png"), type: "image/png" },
-      { url: getAssetPath("/icon.png"), sizes: "192x192", type: "image/png" },
-      { url: getAssetPath("/logo.png"), sizes: "512x512", type: "image/png" },
+      { url: getAssetPath("/images/logo-transparent.png?v=2"), type: "image/png" },
+      { url: getAssetPath("/images/logo-transparent.png?v=2"), sizes: "32x32", type: "image/png" },
+      { url: getAssetPath("/images/logo-transparent.png?v=2"), sizes: "192x192", type: "image/png" },
+      { url: getAssetPath("/images/logo-transparent.png?v=2"), sizes: "512x512", type: "image/png" },
     ],
-    shortcut: [getAssetPath("/images/logo-transparent.png")],
+    shortcut: [getAssetPath("/images/logo-transparent.png?v=2")],
     apple: [
-      { url: getAssetPath("/images/logo-transparent.png"), type: "image/png" },
+      { url: getAssetPath("/images/logo-transparent.png?v=2"), sizes: "180x180", type: "image/png" },
     ],
   },
   robots: {
@@ -94,9 +95,12 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} dark scroll-smooth`}
     >
       <head>
-        <link rel="icon" type="image/png" href={getAssetPath("/images/logo-transparent.png")} />
-        <link rel="shortcut icon" type="image/png" href={getAssetPath("/images/logo-transparent.png")} />
-        <link rel="apple-touch-icon" href={getAssetPath("/images/logo-transparent.png")} />
+        <link rel="icon" type="image/png" href={getAssetPath("/images/logo-transparent.png?v=2")} />
+        <link rel="icon" type="image/png" sizes="32x32" href={getAssetPath("/images/logo-transparent.png?v=2")} />
+        <link rel="icon" type="image/png" sizes="192x192" href={getAssetPath("/images/logo-transparent.png?v=2")} />
+        <link rel="icon" type="image/png" sizes="512x512" href={getAssetPath("/images/logo-transparent.png?v=2")} />
+        <link rel="shortcut icon" type="image/png" href={getAssetPath("/images/logo-transparent.png?v=2")} />
+        <link rel="apple-touch-icon" sizes="180x180" href={getAssetPath("/images/logo-transparent.png?v=2")} />
       </head>
       <body className="min-h-screen bg-[#05050a] text-zinc-100 antialiased selection:bg-violet-600/30 selection:text-white flex flex-col">
         <SmoothScrollProvider>

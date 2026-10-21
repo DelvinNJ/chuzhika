@@ -307,10 +307,10 @@ export default function Contact() {
                     </div>
 
                     {/* Submit Button */}
-                    <MagneticButton
-                      as="button"
-                      onClick={() => {}}
-                      className="w-full mt-2 py-4 rounded-xl bg-gradient-to-r from-violet-600 via-indigo-600 to-violet-700 hover:from-violet-500 hover:to-indigo-500 text-white font-semibold text-sm uppercase tracking-wider shadow-[0_0_30px_rgba(139,92,246,0.35)] hover:shadow-[0_0_40px_rgba(139,92,246,0.6)] transition-all flex items-center justify-center gap-2 border border-violet-400/30"
+                    <button
+                      type="submit"
+                      disabled={status === "submitting"}
+                      className="w-full mt-2 py-4 rounded-xl bg-gradient-to-r from-violet-600 via-indigo-600 to-violet-700 hover:from-violet-500 hover:to-indigo-500 text-white font-semibold text-sm uppercase tracking-wider shadow-[0_0_30px_rgba(139,92,246,0.35)] hover:shadow-[0_0_40px_rgba(139,92,246,0.6)] transition-all flex items-center justify-center gap-2 border border-violet-400/30 group disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer"
                     >
                       {status === "submitting" ? (
                         <>
@@ -320,12 +320,17 @@ export default function Contact() {
                       ) : (
                         <>
                           <span>Transmit Message</span>
-                          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <svg
+                            className="w-4 h-4 transform group-hover:translate-x-2 transition-transform duration-300 ease-out"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                           </svg>
                         </>
                       )}
-                    </MagneticButton>
+                    </button>
                   </form>
                 )}
               </AnimatePresence>
